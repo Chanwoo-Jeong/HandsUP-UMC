@@ -20,7 +20,6 @@
     <string name="my_page_tv_counter">%1d 번 눌렀습니다.</string>
     <string name="my_page_btn_counting_number">숫자 세기</string>
 
-    <!--test String-->
-    <string name="test">숫자 세기</string>
+
 
 </resources>
