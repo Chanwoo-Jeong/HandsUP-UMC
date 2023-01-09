@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.main.mainHome.MainHomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:elevation="2dp"
+        android:id="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/hands_up_logo_vertical_orange"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#101010"
+            android:layout_marginLeft="10dp"
+            android:textSize="12sp"
+            android:layout_marginTop="30dp"
+            android:textFontWeight="600"
+            android:text="가천대"/>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!--위치 잡기 용/ 이후 api 연결 후 수정예정-->
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:elevation="10dp"
+            android:id="@+id/toolbar"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="92dp"
+            android:background="@drawable/rounded">
+            <ImageButton
+                android:layout_width="22dp"
+                android:layout_height="24dp"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="start"
+                android:layout_marginLeft="195dp"
+                android:layout_marginBottom="32dp"
+                app:tint="#1C1B1F"
+                android:src="@drawable/ic_home"/>
+            <ImageButton
+                android:layout_width="21dp"
+                android:layout_height="26dp"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="end"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="32dp"
+                app:tint="#1C1B1F"
+                android:src="@drawable/ic_notifications"/>
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            app:elevation="20dp"
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="23dp"
+            android:backgroundTint="@color/main_orange"
+            android:src="@drawable/ic_add_1"
+            app:maxImageSize="38dp"
+            app:tint="@android:color/white"
+            app:borderWidth="0dp"
+            android:contentDescription="fab"
+            app:fabCustomSize="87dp"
+            android:elevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
