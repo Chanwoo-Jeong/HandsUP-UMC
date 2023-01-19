@@ -33,32 +33,60 @@
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+        android:id="@+id/main_home_tabLayout"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:layout_marginLeft="13dp"
+        android:layout_marginLeft="0dp"
         android:textAlignment="center"
         app:tabTextAppearance="@style/tabTextSizeWeight"
+        app:tabMode="scrollable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:tabIndicatorColor="@color/main_orange"
         app:tabIndicatorFullWidth="false"
-        app:tabMode="scrollable"
         app:tabRippleColor="@color/transparent"
         app:tabSelectedTextColor="@color/main_orange"
-        app:tabTextColor="@color/grey_400" />
+        app:tabTextColor="@color/grey_400">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#전체" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#밥" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#여행" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#스터디" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#취미" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#기타" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layoutDirection="ltr"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" >
+
+    </FrameLayout>
+
 
     <include
         android:id="@+id/main_home_toolbar"
