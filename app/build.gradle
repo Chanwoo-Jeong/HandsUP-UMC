@@ -65,4 +65,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //google login module
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+    // 카카오 로그인 모듈
+    implementation "com.kakao.sdk:v2-user:2.0.1"
 }
