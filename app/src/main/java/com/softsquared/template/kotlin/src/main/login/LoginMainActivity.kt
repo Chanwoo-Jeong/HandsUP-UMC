@@ -45,6 +45,7 @@ class LoginMainActivity : AppCompatActivity() {
                 binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#DBDBDB"))
             }else{
                 binding.LoginPageButtonLogin.isEnabled=true
+
                 binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#F47C16"))
             }
         }
