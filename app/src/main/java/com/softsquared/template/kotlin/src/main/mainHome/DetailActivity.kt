@@ -11,9 +11,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.softsquared.template.kotlin.MainActivity
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityDetailBinding
-import com.softsquared.template.kotlin.src.main.MainActivity
+
 
 class DetailActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityDetailBinding
@@ -29,7 +30,7 @@ class DetailActivity : AppCompatActivity() {
         val backMenu = findViewById<ImageView>(R.id.back_btn_img)
 
         fun moveToHome(){
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

@@ -54,7 +54,7 @@
                 android:textColorHint="@color/grey_500"
                 android:textSize="16sp"/>
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/SignUp_Button_get_code"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

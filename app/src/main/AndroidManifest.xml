@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.softsquared.template.kotlin">
+xmlns:tools="http://schemas.android.com/tools"
+package="com.softsquared.template.kotlin">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,6 +18,19 @@
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
         tools:ignore="AllowBackup">
+
+        <activity
+            android:name=".src.main.handsUpBtn.MainActivityAlert"
+            android:exported="false" />
+        <activity
+            android:name="com.softsquared.template.kotlin.HuploadActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.softsquared.template.kotlin.ChatActivity"
+            android:exported="false" />
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="6bb4b7ce20abe665e038087fef481411" />
 
         <activity
             android:name=".src.main.mainHome.ProfileChangeActivity"
@@ -60,23 +73,28 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".src.main.MainActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.softsquared.template.kotlin.MainActivity"
+        android:exported="false"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.NoActionBar" />
+
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="72iexgyjya" />
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="6bb4b7ce20abe665e038087fef481411"/>
-    </application>
+
+</application>
+
 
 </manifest>

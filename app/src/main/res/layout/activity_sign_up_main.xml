@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUp_progressBar" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/SignUp_button_Next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

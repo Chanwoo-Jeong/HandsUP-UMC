@@ -9,9 +9,10 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.doOnTextChanged
+import com.softsquared.template.kotlin.MainActivity
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityLoginMainBinding
-import com.softsquared.template.kotlin.src.main.MainActivity
+
 import com.softsquared.template.kotlin.src.main.myAccount.SearchPasswordActivity
 import com.softsquared.template.kotlin.src.main.signup.SignUpMainActivity
 
@@ -45,6 +46,7 @@ class LoginMainActivity : AppCompatActivity() {
                 binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#DBDBDB"))
             }else{
                 binding.LoginPageButtonLogin.isEnabled=true
+
                 binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#F47C16"))
             }
         }
@@ -72,7 +74,7 @@ class LoginMainActivity : AppCompatActivity() {
             //move home activity
             if(checkEmailAndPasswordIsTrue()){
                 /*Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()*/
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }else{
                 //logIn error
@@ -90,7 +92,7 @@ class LoginMainActivity : AppCompatActivity() {
     }
 
     fun checkEmailAndPasswordIsTrue():Boolean{
-        return ((emailText=="bambi@soongsil.ac.kr")&&(passwordText=="bambi!!!"))
+        return ((emailText=="handsup")&&(passwordText=="handsup"))
     }
     fun resetEditTextBackground(){
         val transition= ResourcesCompat.getDrawable(resources, R.drawable.login_edit_text_background, null)
