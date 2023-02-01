@@ -1,6 +1,5 @@
 package com.softsquared.template.kotlin.src.main.mainHome
 
-import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,10 +38,10 @@ class mapFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        var rootView = inflater.inflate(com.softsquared.template.kotlin.R.layout.fragment_map,container,false)
-        val mapView = MapView(activity)
-        val mapViewContainer = rootView.findViewById<RelativeLayout>(com.softsquared.template.kotlin.R.id.map_view) as ViewGroup
-        mapViewContainer.addView(mapView)
+        val rootView = inflater.inflate(com.softsquared.template.kotlin.R.layout.fragment_map,container,false)
+//        val mapView = MapView(activity)
+//        val mapViewContainer = rootView.findViewById<RelativeLayout>(com.softsquared.template.kotlin.R.id.map_view) as ViewGroup
+//        mapViewContainer.addView(mapView)
         return rootView
     }
 

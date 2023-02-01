@@ -36,6 +36,7 @@
 
 <!--    태그 탭-->
     <com.google.android.material.tabs.TabLayout
+        android:elevation="1dp"
         android:id="@+id/main_home_tabLayout"
         android:layout_width="match_parent"
         android:layout_height="46dp"

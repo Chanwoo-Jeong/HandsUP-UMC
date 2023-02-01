@@ -20,7 +20,7 @@
         tools:ignore="AllowBackup">
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="ae28992b4f4073f416126c227929a0af" />
+            android:value="6bb4b7ce20abe665e038087fef481411" />
         <activity
             android:name=".src.main.mainHome.ProfileChangeActivity"
             android:exported="false" />
