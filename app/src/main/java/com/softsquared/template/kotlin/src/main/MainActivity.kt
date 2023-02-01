@@ -18,8 +18,7 @@ import com.softsquared.template.kotlin.src.main.mainHome.DetailActivity
 import com.softsquared.template.kotlin.src.main.mainHome.ProfileActivity
 import com.softsquared.template.kotlin.src.main.mainHome.listFragment
 import com.softsquared.template.kotlin.src.main.mainHome.mapFragment
-import net.daum.mf.map.api.MapView
-import java.security.MessageDigest
+
 
 
 class MainActivity : AppCompatActivity() {
