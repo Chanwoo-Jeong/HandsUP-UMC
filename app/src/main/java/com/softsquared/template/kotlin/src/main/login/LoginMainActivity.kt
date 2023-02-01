@@ -11,6 +11,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.doOnTextChanged
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityLoginMainBinding
+import com.softsquared.template.kotlin.src.main.MainActivity
 import com.softsquared.template.kotlin.src.main.myAccount.SearchPasswordActivity
 import com.softsquared.template.kotlin.src.main.signup.SignUpMainActivity
 
@@ -65,9 +66,8 @@ class LoginMainActivity : AppCompatActivity() {
             //move home activity
             if(checkEmailAndPasswordIsTrue()){
                 Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
-                /*val intent = Intent(this,SecondActivity::class.java)
-                intent.putExtra("key",binding.textFirst.text.toString())
-                startActivity(intent)*/
+                val intent = Intent(this,MainActivity::class.java)
+                startActivity(intent)
             }else{
                 //logIn error
                 val transition= ResourcesCompat.getDrawable(resources, R.drawable.login_edit_text_error_background, null)

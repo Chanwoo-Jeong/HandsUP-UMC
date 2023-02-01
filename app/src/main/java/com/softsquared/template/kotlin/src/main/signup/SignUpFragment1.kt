@@ -3,20 +3,24 @@ package com.softsquared.template.kotlin.src.main.signup
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.text.util.Linkify
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.softsquared.template.kotlin.databinding.FragmentSignUp1Binding
+import java.util.regex.Pattern
 
 class SignUpFragment1 : Fragment(){
     private lateinit var binding:FragmentSignUp1Binding
     private lateinit var sendEventListener:SendEnableButtonSign
+
     private var checkAgreeServiceButton:Boolean=false
     private var checkAgreePrivacyButton:Boolean=false
     private var checkAgreeGPSButton:Boolean=false
     private var checkAgreeNoticeButton:Boolean=false
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         //초기하
@@ -76,6 +80,11 @@ class SignUpFragment1 : Fragment(){
             checkAllImageButtonIsTrue()
         }
 
+        //view details (add link)
+        val mTransform = Linkify.TransformFilter { match, url -> "" }
+        val pattern = Pattern.compile("이용약관 자세히 보기")
+        Linkify.addLinks(binding.SignUpTextViewDetails, pattern, "https://miniahiru.notion.site/55bb2cb2fd8b4f3db75775c7065977a2", null, mTransform)
+
         return binding.root
     }
 
@@ -89,7 +98,7 @@ class SignUpFragment1 : Fragment(){
     }
 
     fun checkAllImageButtonIsTrue(){
-        if (checkAgreePrivacyButton&&checkAgreeServiceButton&&checkAgreeGPSButton&&checkAgreeNoticeButton){
+        if (checkAgreePrivacyButton&&checkAgreeServiceButton&&checkAgreeGPSButton){
             sendEventListener.sendSign(true)
         }else{
             sendEventListener.sendSign(false)

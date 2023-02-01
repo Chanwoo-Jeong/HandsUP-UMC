@@ -72,7 +72,7 @@
                 android:padding="16dp"
                 android:singleLine="true"
                 android:textSize="16sp"
-                android:textColor="@color/grey_500"
+                android:textColor="@color/grey_600"
                 android:textColorHint="@color/grey_500"/>
         </com.google.android.material.textfield.TextInputLayout>
 <!--        <EditText-->

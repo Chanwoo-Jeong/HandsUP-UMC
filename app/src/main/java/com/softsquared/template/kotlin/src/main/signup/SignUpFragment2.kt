@@ -30,7 +30,7 @@ class SignUpFragment2: Fragment() {
         binding= FragmentSignUp2Binding.inflate(layoutInflater)
 
         //recycler view
-        val dataList:ArrayList<UnivData> = arrayListOf()
+        /*val dataList:ArrayList<UnivData> = arrayListOf()
         dataList.apply{
             add(UnivData("가천대"))
             add(UnivData("건국대"))
@@ -40,7 +40,7 @@ class SignUpFragment2: Fragment() {
         }
         val adapter=UnivDataRVAdapter(dataList)
         binding.SignUpRecyclerViewUniv.adapter=adapter
-        binding.SignUpRecyclerViewUniv.layoutManager=LinearLayoutManager(activity)
+        binding.SignUpRecyclerViewUniv.layoutManager=LinearLayoutManager(activity)*/
 
         //number picker
         univList= arrayOf("가천대","건국대","동국대","세종대","숭실대")

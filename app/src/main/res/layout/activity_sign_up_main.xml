@@ -30,9 +30,11 @@
         android:progressDrawable="@drawable/signup_progressbar_custom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/SignUp_LinearLayout_Top_Bar"/>
+        app:layout_constraintTop_toBottomOf="@id/SignUp_LinearLayout_Top_Bar" />
 
     <FrameLayout
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:id="@+id/SignUp_frameLayout"
         android:padding="2dp"
         android:layout_width="0dp"
@@ -54,7 +56,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SignUp_frameLayout"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

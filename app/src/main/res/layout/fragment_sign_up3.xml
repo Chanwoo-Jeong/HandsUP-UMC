@@ -1,16 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/SignUp_textView_Check_Univ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학교확인\n도와드릴게요"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="32sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_medium"/>
+        <TextView
+            android:id="@+id/SignUp_textView_Check_Univ_Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학교이메일을 적고 비밀번호를\n만들어주세요. "
+            android:textColor="@color/grey_600"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SignUp_textView_Check_Univ" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="fragment3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/SignUp_LinearLayout_Enter_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/SignUp_textView_Check_Univ_Desc">
+
+            <EditText
+                android:id="@+id/SignUp_EditText_Email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/login_edit_text_background"
+                android:hint="개인 학교 이메일 주소"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textColor="@color/grey_600"
+                android:textColorHint="@color/grey_500"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/SignUp_Button_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="26dp"
+                android:enabled="false"
+                android:background="@color/grey_300"
+                android:fontFamily="@font/roboto_bold"
+                android:text="인증번호받기"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/SignUp_textView_Enter_Email_Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학교메일이 아이디로 사용됩니다. 이메일을 확인해주세요."
+            android:textColor="@color/grey_600"
+            android:layout_marginTop="16dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SignUp_LinearLayout_Enter_Email" />
+
+        <LinearLayout
+            android:id="@+id/SignUp_LinearLayout_Enter_Code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/SignUp_textView_Enter_Email_Desc">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인증번호 입력"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"/>
+            <EditText
+                android:id="@+id/SignUp_EditText_Code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_edit_text_background"
+                android:hint="인증번호"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textColor="@color/grey_600"
+                android:textColorHint="@color/grey_500"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:maxLength="5"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/SignUp_LinearLayout_Enter_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/SignUp_LinearLayout_Enter_Code">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"/>
+            <EditText
+                android:id="@+id/SignUp_EditText_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_edit_text_background"
+                android:hint="비밀번호"
+                android:padding="16dp"
+                android:singleLine="true"
+                android:textColor="@color/grey_600"
+                android:textColorHint="@color/grey_500"
+                android:textSize="16sp"
+                android:layout_marginTop="12dp"
+                android:maxLength="16"/>
+            <TextView
+                android:id="@+id/SignUp_textView_Enter_Password_Desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="특수문자를 포함한 최소 8자리 이상으로 입력해주세요."
+                android:textColor="@color/grey_600"
+                android:layout_marginTop="16dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_regular"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/SignUp_LinearLayout_Check_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/SignUp_LinearLayout_Enter_Password">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 확인"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SignUp_TextInputLayout_Check_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true"
+                app:hintEnabled="false"
+                android:layout_marginTop="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/SignUp_TextInputEditText_Check_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="비밀번호 확인"
+                    android:background="@drawable/login_edit_text_background"
+                    android:padding="16dp"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/grey_600"
+                    android:textColorHint="@color/grey_500"
+                    android:maxLength="16"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

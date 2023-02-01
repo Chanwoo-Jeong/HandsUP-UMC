@@ -12,6 +12,8 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
     private var fragment1=SignUpFragment1()
     private var fragment2=SignUpFragment2()
     private var fragment3=SignUpFragment3()
+    private var fragment4=SignUpFragment4()
+    private var fragment5=SignUpFragment5()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,16 +23,18 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
         binding= ActivitySignUpMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //signup first page is fragment1
         supportFragmentManager.beginTransaction()
             .add(binding.SignUpFrameLayout.id,fragment1)
             .commit()
 
-
+        //when click next btn then replace next page and plus progress bar
         binding.SignUpButtonNext.setOnClickListener {
             plusProgressBar()
             replaceFragment()
         }
 
+        //when click back btn then replace back page and minus progress bar
         binding.SignUpImageViewTopBarBackIcon.setOnClickListener {
             minusProgressBar()
             replaceFragment()
@@ -40,7 +44,7 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
 
     fun plusProgressBar(){
         if (power!=100){
-            power=power+16
+            power=power+20
             binding.SignUpProgressBar.setProgress(power)
         }
     }
@@ -48,36 +52,52 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
         if(power==20){
             finish()
         }else{
-            power=power-16
+            power=power-20
             binding.SignUpProgressBar.setProgress(power)
         }
     }
     fun replaceFragment(){
         when (power){
-            20->supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
-                .replace(binding.SignUpFrameLayout.id,fragment1)
+            20-> {
+                supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right)
+                    .replace(binding.SignUpFrameLayout.id, fragment1)
+                    .commit()
+
+                binding.SignUpButtonNext.text="다음"
+            }
+            40-> {
+                supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right)
+                    .replace(binding.SignUpFrameLayout.id, fragment2)
+                    .commit()
+
+                binding.SignUpButtonNext.text="다음"
+            }
+            60-> {
+                supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right)
+                    .replace(binding.SignUpFrameLayout.id, fragment3)
+                    .commit()
+
+                binding.SignUpButtonNext.text="다음"
+            }
+            80-> {
+                supportFragmentManager.beginTransaction()
+                    .setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right)
+                    .replace(binding.SignUpFrameLayout.id, fragment4)
+                    .commit()
+
+                binding.SignUpButtonNext.text="다음"
+            }
+            100->{
+                supportFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left,R.anim.enter_from_left, R.anim.exit_to_right)
+                .replace(binding.SignUpFrameLayout.id,fragment5)
                 .commit()
-            36->supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
-                .replace(binding.SignUpFrameLayout.id,fragment2)
-                .commit()
-            52->supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
-                .replace(binding.SignUpFrameLayout.id,fragment3)
-                .commit()
-            68->supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
-                .replace(binding.SignUpFrameLayout.id,fragment2)
-                .commit()
-            84->supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
-                .replace(binding.SignUpFrameLayout.id,fragment3)
-                .commit()
-            100->supportFragmentManager.beginTransaction()
-                .setCustomAnimations(R.anim.enter_from_right,R.anim.exit_to_left)
-                .replace(binding.SignUpFrameLayout.id,fragment2)
-                .commit()
+
+                binding.SignUpButtonNext.text="핸즈업 들어가기"
+            }
         }
 
     }
