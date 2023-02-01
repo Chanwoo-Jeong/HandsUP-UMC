@@ -12,7 +12,7 @@
         android:layout_width="61dp"
         android:layout_height="23dp"
         android:layout_marginBottom="1dp"
-        android:checked="true"
+        android:checked="false"
         android:gravity="center"
         android:textOff="Map"
         android:textOn="List"
@@ -42,6 +42,7 @@
             android:background="@drawable/rounded">
 
             <ImageButton
+                android:id="@+id/toolbar_home_btn"
                 android:layout_width="22dp"
                 android:layout_height="24dp"
                 android:backgroundTint="@color/white"

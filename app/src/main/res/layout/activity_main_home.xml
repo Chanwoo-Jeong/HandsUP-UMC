@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".src.main.mainHome.MainHomeActivity">
 
+<!--    상단바-->
     <androidx.appcompat.widget.Toolbar
         android:elevation="2dp"
         android:id="@id/toolbar"
@@ -22,6 +23,7 @@
             android:layout_marginLeft="20dp"
             android:src="@drawable/hands_up_logo_vertical_orange"/>
         <TextView
+            android:id="@+id/main_schoolName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#101010"
@@ -32,6 +34,7 @@
             android:text="가천대"/>
     </androidx.appcompat.widget.Toolbar>
 
+<!--    태그 탭-->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/main_home_tabLayout"
         android:layout_width="match_parent"
@@ -57,12 +60,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="#밥" />
+            android:text="#Talk" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="#여행" />
+            android:text="#밥" />
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,10 +79,13 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="#기타" />
+            android:text="#여행" />
     </com.google.android.material.tabs.TabLayout>
 
+<!--    지도 및 리스트-->
     <FrameLayout
+        app:layout_constraintTop_toBottomOf="@+id/main_home_tabLayout"
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,9 +93,11 @@
 
     </FrameLayout>
 
-
+<!--    하단바-->
     <include
         android:id="@+id/main_home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         layout="@layout/main_toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
