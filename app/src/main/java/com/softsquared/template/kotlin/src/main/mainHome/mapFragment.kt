@@ -1,12 +1,13 @@
 package com.softsquared.template.kotlin.src.main.mainHome
 
+import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
+import com.naver.maps.map.NaverMap
 import androidx.fragment.app.Fragment
-import net.daum.mf.map.api.MapView
+import com.naver.maps.map.MapView
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,17 +21,21 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class mapFragment : Fragment() {
+
+    private lateinit var mapView: MapView
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -40,12 +45,13 @@ class mapFragment : Fragment() {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(com.softsquared.template.kotlin.R.layout.fragment_map,container,false)
 //        val mapView = MapView(activity)
-//        val mapViewContainer = rootView.findViewById<RelativeLayout>(com.softsquared.template.kotlin.R.id.map_view) as ViewGroup
-//        mapViewContainer.addView(mapView)
+//        rootView.findViewById<RelativeLayout>(com.softsquared.template.kotlin.R.id.map_view).addView(mapView)
+
         return rootView
     }
 
     companion object {
+        lateinit var naverMap: NaverMap
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

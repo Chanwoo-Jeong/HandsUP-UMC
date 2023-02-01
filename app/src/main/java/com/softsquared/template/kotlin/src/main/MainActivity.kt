@@ -14,12 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityMainHomeBinding
-import com.softsquared.template.kotlin.src.main.mainHome.DetailActivity
-import com.softsquared.template.kotlin.src.main.mainHome.ProfileActivity
-import com.softsquared.template.kotlin.src.main.mainHome.listFragment
-import com.softsquared.template.kotlin.src.main.mainHome.mapFragment
-import net.daum.mf.map.api.MapView
-import java.security.MessageDigest
+import com.softsquared.template.kotlin.src.main.mainHome.*
 
 
 class MainActivity : AppCompatActivity() {
