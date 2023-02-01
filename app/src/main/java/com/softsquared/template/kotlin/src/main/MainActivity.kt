@@ -1,6 +1,5 @@
 package com.softsquared.template.kotlin.src.main
 
-import com.kakao.sdk.common.util.Utility
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
@@ -36,10 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
-
-        var keyHash = Utility.getKeyHash(this)
-        Log.d("keyHash",keyHash)
 
 
         val title = findViewById<TextView>(R.id.main_schoolName)
