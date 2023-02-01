@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.softsquared.template.kotlin.MainActivity
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityProfileBinding
-import com.softsquared.template.kotlin.src.main.MainActivity
+
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class ProfileActivity : AppCompatActivity() {
 
         val backBtn = findViewById<ImageView>(R.id.profile_homeBack_btn)
         fun moveToHome(){
-            val intent= Intent(this,MainActivity::class.java)
+            val intent= Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
         backBtn.setOnClickListener {

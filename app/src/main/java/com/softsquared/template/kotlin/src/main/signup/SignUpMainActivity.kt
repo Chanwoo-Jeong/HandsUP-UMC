@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivitySignUpMainBinding
-import com.softsquared.template.kotlin.src.main.MainActivity
+
 import com.softsquared.template.kotlin.src.main.login.LoginMainActivity
 
 class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {

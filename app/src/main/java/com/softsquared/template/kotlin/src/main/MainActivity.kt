@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin.src.main
+package com.softsquared.template.kotlin
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -14,17 +14,19 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityMainHomeBinding
-import com.softsquared.template.kotlin.src.main.mainHome.DetailActivity
-import com.softsquared.template.kotlin.src.main.mainHome.ProfileActivity
-import com.softsquared.template.kotlin.src.main.mainHome.listFragment
-import com.softsquared.template.kotlin.src.main.mainHome.mapFragment
-import net.daum.mf.map.api.MapView
-import java.security.MessageDigest
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.softsquared.template.kotlin.src.main.handsUpBtn.MainActivityAlert
+import com.softsquared.template.kotlin.src.main.mainHome.*
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainHomeBinding
+    private lateinit var getResultText: ActivityResultLauncher<Intent>
+    var id : String = "roby"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,10 +38,29 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-
         val title = findViewById<TextView>(R.id.main_schoolName)
         val plusBtn = findViewById<FloatingActionButton>(R.id.floatingActionButton2)
         val homeBtn = findViewById<ImageView>(R.id.toolbar_home_btn)
+        val alertBtn = findViewById<ImageView>(R.id.toolbar_alert_btn)
+
+        val transaction=supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frameLayout,mapFragment()).commit()
+
+        val switchBtn: SwitchCompat = findViewById(R.id.switchBtn)
+
+        switchBtn.setOnCheckedChangeListener{ p0, isChecked ->
+            if(isChecked){
+                val transaction=supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.frameLayout,listFragment())
+                transaction.commit()
+            } else {
+                val transaction=supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.frameLayout,mapFragment())
+                transaction.commit()
+            }
+
+        }
+
 
         fun moveToProfile(){
             val intent=Intent(this,ProfileActivity::class.java)
@@ -53,8 +74,33 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,DetailActivity::class.java)
             startActivity(intent)
         }
+
+        getResultText = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val name = result.data?.getStringExtra("name")
+                val postContent = result.data?.getStringExtra("postContent")
+
+                val listFragment = listFragment()
+                val bundle = Bundle()
+
+                bundle.putString("name", name.toString())
+                bundle.putString("postContent", postContent.toString())
+                Log.d("bundle",bundle.toString())
+                listFragment.arguments = bundle
+
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frameLayout,listFragment)
+                    .commitAllowingStateLoss()
+            }
+        }
+
         plusBtn.setOnClickListener{
-            moveToPage()
+            Log.d("MainActivity","im upload button")
+            val intent = Intent(this, HuploadActivity::class.java)
+            getResultText.launch(intent)
         }
 
         fun moveToHome(){
@@ -65,8 +111,10 @@ class MainActivity : AppCompatActivity() {
             moveToHome()
         }
 
-
-
+        alertBtn.setOnClickListener{
+            val intent=Intent(this,MainActivityAlert::class.java)
+            startActivity(intent)
+        }
 
         binding.mainHomeTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -83,24 +131,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-        val transaction=supportFragmentManager.beginTransaction()
-        transaction.add(R.id.frameLayout,mapFragment()).commit()
 
-        val switchBtn: SwitchCompat = findViewById(R.id.switchBtn)
 
-        switchBtn.setOnCheckedChangeListener{ p0, isChecked ->
-            if(isChecked){
-                val transaction=supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frameLayout,listFragment())
-                transaction.commit()
-            } else {
-                val transaction=supportFragmentManager.beginTransaction()
-               transaction.replace(R.id.frameLayout,mapFragment())
-                transaction.commit()
-            }
-
-        }
-
+//>>>>>>> dev
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

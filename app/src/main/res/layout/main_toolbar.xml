@@ -52,6 +52,7 @@
                 app:tint="#1C1B1F"
                 android:src="@drawable/ic_home"/>
             <ImageButton
+                android:id="@+id/toolbar_alert_btn"
                 android:layout_width="21dp"
                 android:layout_height="26dp"
                 android:backgroundTint="@color/white"
