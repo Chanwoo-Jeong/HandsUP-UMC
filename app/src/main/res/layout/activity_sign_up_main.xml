@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:id="@+id/SignUp_LinearLayout_Top_Bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/SignUp_ImageView_Top_Bar_back_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24"/>
+    </LinearLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/SignUp_progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="9dp"
+        android:layout_marginTop="10dp"
+        android:progress="20"
+        android:progressDrawable="@drawable/signup_progressbar_custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SignUp_LinearLayout_Top_Bar" />
+
+    <FrameLayout
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/SignUp_frameLayout"
+        android:padding="2dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/SignUp_button_Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUp_progressBar" />
+
+    <Button
+        android:id="@+id/SignUp_button_Next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_300"
+        android:fontFamily="@font/roboto_bold"
+        android:text="다음"
+        android:enabled="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SignUp_frameLayout"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
