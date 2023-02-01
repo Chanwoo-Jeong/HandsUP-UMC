@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-//>>>>>>> dev
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

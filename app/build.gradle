@@ -41,6 +41,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.naver.maps:map-sdk:3.16.0'
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/libDaumMapAndroid.jar')
 
