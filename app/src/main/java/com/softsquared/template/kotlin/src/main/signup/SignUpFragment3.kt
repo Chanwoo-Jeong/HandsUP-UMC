@@ -53,7 +53,7 @@ class SignUpFragment3: Fragment() {
         }
 
         binding.SignUpButtonGetCode.setOnClickListener {
-            Toast.makeText(activity,"click",Toast.LENGTH_SHORT).show()
+            /*Toast.makeText(activity,"click",Toast.LENGTH_SHORT).show()*/
         }
 
         //set edit text (code) background

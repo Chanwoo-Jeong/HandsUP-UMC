@@ -55,6 +55,12 @@ class LoginMainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //move find password activity when click find ID TextView
+        binding.LoginPageTextViewSearchEmail.setOnClickListener {
+            val intent = Intent(this,SearchPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
         //move sign up activity when click sign up TextView
         binding.LoginPageTextViewSignUp.setOnClickListener {
             val intent = Intent(this,SignUpMainActivity::class.java)
@@ -65,7 +71,7 @@ class LoginMainActivity : AppCompatActivity() {
         binding.LoginPageButtonLogin.setOnClickListener {
             //move home activity
             if(checkEmailAndPasswordIsTrue()){
-                Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()
+                /*Toast.makeText(this,"success",Toast.LENGTH_SHORT).show()*/
                 val intent = Intent(this,MainActivity::class.java)
                 startActivity(intent)
             }else{
@@ -84,7 +90,7 @@ class LoginMainActivity : AppCompatActivity() {
     }
 
     fun checkEmailAndPasswordIsTrue():Boolean{
-        return ((emailText=="bambi")&&(passwordText=="1111"))
+        return ((emailText=="bambi@soongsil.ac.kr")&&(passwordText=="bambi!!!"))
     }
     fun resetEditTextBackground(){
         val transition= ResourcesCompat.getDrawable(resources, R.drawable.login_edit_text_background, null)

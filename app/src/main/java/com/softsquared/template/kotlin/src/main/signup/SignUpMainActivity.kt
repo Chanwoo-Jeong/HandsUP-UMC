@@ -1,10 +1,13 @@
 package com.softsquared.template.kotlin.src.main.signup
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivitySignUpMainBinding
+import com.softsquared.template.kotlin.src.main.MainActivity
+import com.softsquared.template.kotlin.src.main.login.LoginMainActivity
 
 class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
     private lateinit var binding: ActivitySignUpMainBinding
@@ -46,6 +49,9 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
         if (power!=100){
             power=power+20
             binding.SignUpProgressBar.setProgress(power)
+        }else{
+            val intent = Intent(this,LoginMainActivity::class.java)
+            startActivity(intent)
         }
     }
     fun minusProgressBar(){

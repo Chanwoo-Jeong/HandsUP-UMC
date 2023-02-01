@@ -51,7 +51,7 @@ class SignUpFragment2: Fragment() {
         binding.SignUpNumberPickerUniv.wrapSelectorWheel=false
         binding.SignUpNumberPickerUniv.displayedValues=univList
         binding.SignUpNumberPickerUniv.setOnValueChangedListener { picker, oldVal, newVal ->
-            Toast.makeText(activity,newVal.toString(),Toast.LENGTH_SHORT).show()
+//            Toast.makeText(activity,newVal.toString(),Toast.LENGTH_SHORT).show()
         }
 
         return binding.root
