@@ -52,6 +52,7 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
         }else{
             val intent = Intent(this,LoginMainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
     fun minusProgressBar(){
