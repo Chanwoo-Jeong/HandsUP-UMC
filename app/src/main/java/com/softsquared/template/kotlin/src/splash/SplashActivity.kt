@@ -7,7 +7,7 @@ import android.os.Looper
 import com.softsquared.template.kotlin.MainActivity
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivitySplashBinding
-
+import com.softsquared.template.kotlin.src.main.login.LoginMainActivity
 
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
@@ -15,7 +15,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         super.onCreate(savedInstanceState)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginMainActivity::class.java))
             finish()
         }, 1500)
     }

@@ -21,7 +21,7 @@ import com.softsquared.template.kotlin.databinding.FragmentSecondBinding
 class SecondFragment : Fragment() {
 
         private lateinit var viewBinding: FragmentSecondBinding
-        var id : String = "roby"
+        var id : String = "usertwo"
         override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,

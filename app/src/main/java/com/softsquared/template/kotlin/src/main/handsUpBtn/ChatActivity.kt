@@ -10,7 +10,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.softsquared.template.kotlin.databinding.ActivityMainBinding
+
 import com.softsquared.template.kotlin.databinding.ActivityMainUchatBinding
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -24,13 +24,13 @@ fun WhatTime(): String? {
 
 class ChatActivity : AppCompatActivity() {
     private lateinit var viewbinding: ActivityMainUchatBinding
-    private lateinit var aviewbinding : ActivityMainBinding
-    var nick : String = "roby"
+
+    var myid = "usertwo"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val intent = intent
-        val id = intent.getStringExtra("id")
+        val postid = intent.getStringExtra("postid")
         val from = intent.getStringExtra("from")
 
         viewbinding = ActivityMainUchatBinding.inflate(layoutInflater)
@@ -42,7 +42,7 @@ class ChatActivity : AppCompatActivity() {
             if(from.isNotEmpty()){
                 Log.d("from",from)
                 val database = Firebase.database
-                val myRef = database.getReference("message").child(id.toString()+from.toString())
+                val myRef = database.getReference("message").child(postid.toString()+from.toString())
                 val NmyRef = database.getReference("Note")
 
                 val items: ArrayList<ChatData> = arrayListOf()
@@ -50,7 +50,7 @@ class ChatActivity : AppCompatActivity() {
 
                 //리사이클러뷰 어댑터 연결
                 val rv = findViewById<RecyclerView>(R.id.recycler_view)
-                val rvAdapter = ChatAdapter(items , this, nick)
+                val rvAdapter = ChatAdapter(items , this, myid)
                 val Notedapter = Notedapter(noteitems , this)
 
                 rv.adapter = rvAdapter
@@ -78,11 +78,11 @@ class ChatActivity : AppCompatActivity() {
                     val time:String = WhatTime().toString()
                     val msg:String = viewbinding.utextmsg.text.toString()
                     if(msg.isNotEmpty()) {
-                        var chatnew = ChatData(id.toString(), msg, time)
+                        var chatnew = ChatData(postid.toString(), msg, time)
                         myRef.push().setValue(chatnew)
                         rvAdapter.notifyDataSetChanged()
 
-                        var note = NoteData(id.toString(),from)
+                        var note = NoteData(postid.toString(),from)
                         NmyRef.push().setValue(note)
                         Notedapter.notifyDataSetChanged()
                         //스크롤 포지션
@@ -92,8 +92,9 @@ class ChatActivity : AppCompatActivity() {
                 }
             }
         } else{
+            //게시물을 보고 메시지를 보낼때
             val database = Firebase.database
-            val myRef = database.getReference("message").child(id.toString()+nick)
+            val myRef = database.getReference("message").child(postid.toString()+myid)
             val NmyRef = database.getReference("Note")
 
             val items: ArrayList<ChatData> = arrayListOf()
@@ -101,7 +102,7 @@ class ChatActivity : AppCompatActivity() {
 
             //리사이클러뷰 어댑터 연결
             val rv = findViewById<RecyclerView>(R.id.recycler_view)
-            val rvAdapter = ChatAdapter(items , this, nick)
+            val rvAdapter = ChatAdapter(items , this, myid)
             val Notedapter = Notedapter(noteitems , this)
 
             rv.adapter = rvAdapter
@@ -129,11 +130,11 @@ class ChatActivity : AppCompatActivity() {
                 val time:String = WhatTime().toString()
                 val msg:String = viewbinding.utextmsg.text.toString()
                 if(msg.isNotEmpty()) {
-                    var chatnew = ChatData(nick, msg, time)
+                    var chatnew = ChatData(myid, msg, time)
                     myRef.push().setValue(chatnew)
                     rvAdapter.notifyDataSetChanged()
 
-                    var note = NoteData(nick,id.toString())
+                    var note = NoteData(myid,postid.toString())
                     NmyRef.push().setValue(note)
                     Notedapter.notifyDataSetChanged()
                     //스크롤 포지션
