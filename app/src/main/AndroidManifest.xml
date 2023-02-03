@@ -20,13 +20,13 @@ package="com.softsquared.template.kotlin">
         tools:ignore="AllowBackup">
 
         <activity
-            android:name=".src.main.handsUpBtn.MainActivityAlert"
+            android:name=".src.main.mainAlert.MainActivityAlert"
             android:exported="false" />
         <activity
             android:name="com.softsquared.template.kotlin.HuploadActivity"
             android:exported="false" />
         <activity
-            android:name="com.softsquared.template.kotlin.ChatActivity"
+            android:name="com.softsquared.template.kotlin.src.main.Chatting.ChatActivity"
             android:exported="false" />
         <meta-data
             android:name="com.kakao.sdk.AppKey"

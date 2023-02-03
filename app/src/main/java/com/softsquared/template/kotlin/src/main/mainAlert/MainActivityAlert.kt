@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin.src.main.handsUpBtn
+package com.softsquared.template.kotlin.src.main.mainAlert
 
 import android.content.Intent
 import android.graphics.Color
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import android.widget.Toolbar
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -16,9 +15,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.softsquared.template.kotlin.*
 import com.softsquared.template.kotlin.databinding.ActivityMainAlertBinding
-import com.softsquared.template.kotlin.databinding.ActivityMainHomeBinding
 import com.softsquared.template.kotlin.src.main.mainHome.MainData
-import com.softsquared.template.kotlin.src.main.mainHome.listFragment
 
 
 class MainActivityAlert : AppCompatActivity() {
@@ -41,7 +38,7 @@ class MainActivityAlert : AppCompatActivity() {
         viewbinding.alertBtn.setOnClickListener{
             supportFragmentManager
                 .beginTransaction()
-                .replace(viewbinding.frameFragment.id,FirstFragment())
+                .replace(viewbinding.frameFragment.id, FirstFragment())
                 .commitAllowingStateLoss()
             viewbinding.alertBtn.setTextColor(Color.parseColor("#000000"))
             viewbinding.msgBtn.setTextColor(Color.parseColor("#D3D3D3"))
@@ -86,7 +83,7 @@ class MainActivityAlert : AppCompatActivity() {
         }
 
         alertBtn.setOnClickListener{
-            val intent=Intent(this,MainActivityAlert::class.java)
+            val intent=Intent(this, MainActivityAlert::class.java)
             startActivity(intent)
         }
 

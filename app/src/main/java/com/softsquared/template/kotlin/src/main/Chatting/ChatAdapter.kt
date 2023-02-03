@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin
+package com.softsquared.template.kotlin.src.main.Chatting
 
 import android.content.Context
 import android.graphics.Color
@@ -11,12 +11,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.softsquared.template.kotlin.R
 
 
 class ChatAdapter(private val items: List<ChatData>, private val context: Context, private val mynickName : String) :
     RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //한 화면에 그려지는 아이템 개수만큼 레이아웃 생성
         // 뷰홀더는 현재 화면에 보여지는 개수만큼만 생성되고
         // 스크롤 될 경우 가장 위의 뷰홀더를 재사용한 후 데이터만 바꿔줌
@@ -26,7 +27,7 @@ class ChatAdapter(private val items: List<ChatData>, private val context: Contex
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ChatAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // 생성된 아이템 레이아웃에 값 입력 후 목록에 출력
         // 뷰홀더가 재활용될때 실행되는 메소드 작성
         holder.bindItems(items[position])
@@ -62,7 +63,9 @@ class ChatAdapter(private val items: List<ChatData>, private val context: Contex
                Log.d("who", "its other")
                msgBox.setGravity(Gravity.RIGHT)
                //drawable 설정
-              rv_msg.background = ContextCompat.getDrawable(context,R.drawable.chattingbackgroundother)
+              rv_msg.background = ContextCompat.getDrawable(context,
+                  R.drawable.chattingbackgroundother
+              )
               rv_msg.setTextColor(Color.parseColor("#FFFFFF"))
             }
 

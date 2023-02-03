@@ -1,7 +1,6 @@
-package com.softsquared.template.kotlin
+package com.softsquared.template.kotlin.src.main.mainAlert
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.softsquared.template.kotlin.src.main.Note.NoteData
+import com.softsquared.template.kotlin.src.main.Note.Notedapter
 import com.softsquared.template.kotlin.databinding.FragmentSecondBinding
 
 

@@ -1,24 +1,20 @@
 package com.softsquared.template.kotlin
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Base64
 import android.util.Log
 import android.view.Menu
-import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
-import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityMainHomeBinding
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.softsquared.template.kotlin.src.main.handsUpBtn.MainActivityAlert
+import com.softsquared.template.kotlin.src.main.mainAlert.MainActivityAlert
 import com.softsquared.template.kotlin.src.main.mainHome.*
 
 
