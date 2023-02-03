@@ -15,13 +15,10 @@ import com.google.firebase.ktx.Firebase
 import com.softsquared.template.kotlin.databinding.FragmentSecondBinding
 
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragment : Fragment() {
 
         private lateinit var viewBinding: FragmentSecondBinding
-        var id : String = "userone"
+        var id : String = "usertwo"
         override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -29,7 +26,6 @@ class SecondFragment : Fragment() {
         ): View {
             viewBinding = FragmentSecondBinding.inflate(layoutInflater)
 
-//            val bundle = arguments
             val noteitems: ArrayList<NoteData> = arrayListOf()
 
             var rv = viewBinding.recyclerNote
@@ -37,7 +33,6 @@ class SecondFragment : Fragment() {
             //리사이클러뷰 어댑터 연결
             rv.adapter = rvAdapter
             rv.layoutManager = LinearLayoutManager(requireActivity())
-//            if(bundle != null) {
 
                 // Write a message to the database
                 val database = Firebase.database

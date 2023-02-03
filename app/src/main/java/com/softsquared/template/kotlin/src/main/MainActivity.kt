@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainHomeBinding
     private lateinit var getResultText: ActivityResultLauncher<Intent>
-    var id : String = "userone"
+    var id: String = "usertwo"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityMainHomeBinding.inflate(layoutInflater)
+        binding = ActivityMainHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var toolbar = binding.toolbar
@@ -43,35 +43,35 @@ class MainActivity : AppCompatActivity() {
         val homeBtn = findViewById<ImageView>(R.id.toolbar_home_btn)
         val alertBtn = findViewById<ImageView>(R.id.toolbar_alert_btn)
 
-        val transaction=supportFragmentManager.beginTransaction()
-        transaction.add(R.id.frameLayout,mapFragment()).commit()
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.frameLayout, mapFragment()).commit()
 
         val switchBtn: SwitchCompat = findViewById(R.id.switchBtn)
 
-        switchBtn.setOnCheckedChangeListener{ p0, isChecked ->
-            if(isChecked){
-                val transaction=supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frameLayout,listFragment())
+        switchBtn.setOnCheckedChangeListener { p0, isChecked ->
+            if (isChecked) {
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.frameLayout, listFragment())
                 transaction.commit()
             } else {
-                val transaction=supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frameLayout,mapFragment())
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.frameLayout, mapFragment())
                 transaction.commit()
             }
 
         }
 
 
-        fun moveToProfile(){
-            val intent=Intent(this,ProfileActivity::class.java)
+        fun moveToProfile() {
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
         title.setOnClickListener {
             moveToProfile()
         }
 
-        fun moveToPage(){
-            val intent=Intent(this,DetailActivity::class.java)
+        fun moveToPage() {
+            val intent = Intent(this, DetailActivity::class.java)
             startActivity(intent)
         }
 
@@ -82,44 +82,39 @@ class MainActivity : AppCompatActivity() {
                 val name = result.data?.getStringExtra("name")
                 val postContent = result.data?.getStringExtra("postContent")
 
-                val listFragment = listFragment()
-                val bundle = Bundle()
+                val database = Firebase.database
+                val myRef = database.getReference("postRoom")
 
-                bundle.putString("name", name.toString())
-                bundle.putString("postContent", postContent.toString())
-                Log.d("bundle",bundle.toString())
-                listFragment.arguments = bundle
+                var postRoom = MainData(name.toString(), "위치비밀", 10, postContent.toString())
+                myRef.push().setValue(postRoom)
 
-                supportFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frameLayout,listFragment)
-                    .commitAllowingStateLoss()
             }
         }
 
-        plusBtn.setOnClickListener{
-            Log.d("MainActivity","im upload button")
+        plusBtn.setOnClickListener {
+            Log.d("MainActivity", "im upload button")
             val intent = Intent(this, HuploadActivity::class.java)
             getResultText.launch(intent)
         }
 
-        fun moveToHome(){
-            val intent=Intent(this,MainActivity::class.java)
+        fun moveToHome() {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        homeBtn.setOnClickListener{
+        homeBtn.setOnClickListener {
             moveToHome()
         }
 
-        alertBtn.setOnClickListener{
-            val intent=Intent(this,MainActivityAlert::class.java)
+        alertBtn.setOnClickListener {
+            val intent = Intent(this, MainActivityAlert::class.java)
             startActivity(intent)
         }
 
-        binding.mainHomeTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
+        binding.mainHomeTabLayout.addOnTabSelectedListener(object :
+            TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 var text = tab!!.text.toString()
-                Log.d("test1",tab!!.text.toString())
+                Log.d("test1", tab!!.text.toString())
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -129,15 +124,13 @@ class MainActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
 
             }
-
-        })
-
-
+            }
+        )
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu,menu)
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
 

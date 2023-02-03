@@ -22,7 +22,6 @@ class listFragment : Fragment() {
 
     lateinit var recyclerView: RecyclerView
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,22 +30,10 @@ class listFragment : Fragment() {
         val database = Firebase.database
         val myRef = database.getReference("postRoom")
 
-        var bundle = arguments
-        if(bundle != null) {
-            val name: String? = this.arguments?.getString("name")
-            Log.d("name 입니다",name.toString())
-            val postContent: String? = this.arguments?.getString("postContent")
-            var postRoom = MainData(name.toString(),"위치비밀",10,postContent.toString())
-            myRef.push().setValue(postRoom)
-        } else{
-            Log.d("error", "번들이 비었습니다.")
-        }
-
         val dataList : ArrayList<MainData> = ArrayList()
 
         // Inflate the layout for this fragment
         var rootView = inflater.inflate(R.layout.fragment_list,container,false)
-
 
         var rv = rootView.findViewById(R.id.list_recyclerView!!)as RecyclerView
         var rvAdapter = ListAdapter(dataList,requireContext())
