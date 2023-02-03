@@ -25,7 +25,7 @@ fun WhatTime(): String? {
 class ChatActivity : AppCompatActivity() {
     private lateinit var viewbinding: ActivityMainUchatBinding
 
-    var myid = "usertwo"
+    var myid = "userone"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

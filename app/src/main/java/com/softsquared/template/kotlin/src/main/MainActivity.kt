@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainHomeBinding
     private lateinit var getResultText: ActivityResultLauncher<Intent>
-    var id : String = "roby"
+    var id : String = "userone"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
