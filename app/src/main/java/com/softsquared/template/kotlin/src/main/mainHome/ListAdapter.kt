@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.softsquared.template.kotlin.ChatActivity
+import com.softsquared.template.kotlin.src.main.Chatting.ChatActivity
 import com.softsquared.template.kotlin.R
 
 class ListAdapter(private val list: ArrayList<MainData>,private val context: Context) :

@@ -1,7 +1,6 @@
-package com.softsquared.template.kotlin
+package com.softsquared.template.kotlin.src.main.mainAlert
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,12 +11,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.softsquared.template.kotlin.src.main.Note.NoteData
+import com.softsquared.template.kotlin.src.main.Note.Notedapter
 import com.softsquared.template.kotlin.databinding.FragmentSecondBinding
 
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragment : Fragment() {
 
         private lateinit var viewBinding: FragmentSecondBinding
@@ -29,7 +27,6 @@ class SecondFragment : Fragment() {
         ): View {
             viewBinding = FragmentSecondBinding.inflate(layoutInflater)
 
-//            val bundle = arguments
             val noteitems: ArrayList<NoteData> = arrayListOf()
 
             var rv = viewBinding.recyclerNote
@@ -37,7 +34,6 @@ class SecondFragment : Fragment() {
             //리사이클러뷰 어댑터 연결
             rv.adapter = rvAdapter
             rv.layoutManager = LinearLayoutManager(requireActivity())
-//            if(bundle != null) {
 
                 // Write a message to the database
                 val database = Firebase.database

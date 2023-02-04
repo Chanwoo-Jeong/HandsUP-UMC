@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin
+package com.softsquared.template.kotlin.src.main.Chatting
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.softsquared.template.kotlin.src.main.Note.NoteData
+import com.softsquared.template.kotlin.src.main.Note.Notedapter
+import com.softsquared.template.kotlin.R
 
 import com.softsquared.template.kotlin.databinding.ActivityMainUchatBinding
 import java.time.LocalDateTime

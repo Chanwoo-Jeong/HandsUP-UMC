@@ -1,4 +1,4 @@
-package com.softsquared.template.kotlin
+package com.softsquared.template.kotlin.src.main.Chatting
 
 data class ChatData(
     val mynickName : String = "" ,
