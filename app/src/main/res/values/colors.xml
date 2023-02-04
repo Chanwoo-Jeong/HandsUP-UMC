@@ -7,9 +7,27 @@
     <!-- 기본 -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="transparent">#00ff0000</color>
 
     <color name="whiteForBackground">#FFFFFF</color>
     <color name="blackForText">#4a4a4a</color>
     <color name="redForText">#d9534f</color>
+
+<!--    hands up color-->
+    <color name="main_blue">#4573B8</color>
+    <color name="main_orange">#F47C16</color>
+    <color name="warning_red">#FC4444</color>
+    <color name="correct_green">#18B569</color>
+
+    <color name="background_grey_100">#F9F9F9</color>
+    <color name="grey_200">#EFEFEF</color>
+    <color name="grey_300">#DBDBDB</color>
+    <color name="grey_400">#C6C6C6</color>
+    <color name="grey_500">#A7A7A7</color>
+    <color name="grey_600">#747474</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
 
 </resources>
