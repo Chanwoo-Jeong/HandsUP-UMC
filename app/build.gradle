@@ -82,9 +82,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.naver.maps:map-sdk:3.16.0'
 
+    //Firebase realtime database 구현
     implementation 'com.google.firebase:firebase-database-ktx:20.0.0'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    //FCM 구현
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.0'
+    implementation 'com.google.firebase:firebase-bom:29.1.0'
+    implementation 'com.google.firebase:firebase-core:20.1.0'
 
 }

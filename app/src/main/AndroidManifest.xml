@@ -19,6 +19,14 @@ package="com.softsquared.template.kotlin">
         android:networkSecurityConfig="@xml/network_security_config"
         tools:ignore="AllowBackup">
 
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".src.main.mainAlert.MainActivityAlert"
             android:exported="false" />
@@ -73,8 +81,6 @@ package="com.softsquared.template.kotlin">
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
-
-
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
@@ -93,6 +99,20 @@ package="com.softsquared.template.kotlin">
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="6bb4b7ce20abe665e038087fef481411"/>
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+<!--        <meta-data-->
+<!--            android:name="com.google.firebase.messaging.default_notification_icon"-->
+<!--            android:resource="@drawable/ic_stat_ic_notification" />-->
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
 
 </application>
 

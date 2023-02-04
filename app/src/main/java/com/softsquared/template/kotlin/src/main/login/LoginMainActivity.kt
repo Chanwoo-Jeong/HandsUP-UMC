@@ -3,27 +3,32 @@ package com.softsquared.template.kotlin.src.main.login
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.Drawable
-import android.graphics.drawable.TransitionDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.widget.doOnTextChanged
+import com.google.firebase.messaging.FirebaseMessaging
 import com.softsquared.template.kotlin.MainActivity
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivityLoginMainBinding
-
 import com.softsquared.template.kotlin.src.main.myAccount.SearchPasswordActivity
 import com.softsquared.template.kotlin.src.main.signup.SignUpMainActivity
 
 class LoginMainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginMainBinding
     private var emailText:String=""
     private var passwordText:String=""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLoginMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val token = FirebaseMessaging.getInstance().token.result
+
+        Log.d("token", token)
 
         //set login btn background color
         binding.LoginPageEditTextEmail.doOnTextChanged { text, start, before, count ->
@@ -100,4 +105,6 @@ class LoginMainActivity : AppCompatActivity() {
 
         binding.LoginPageEditTextEmail.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null)
     }
+
+
 }
