@@ -41,10 +41,8 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.gms:play-services-location:16.0.0")
     implementation 'com.naver.maps:map-sdk:3.16.0'
-
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('libs/libDaumMapAndroid.jar')
 
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
