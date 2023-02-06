@@ -47,6 +47,7 @@ class mapFragment : Fragment() {
         return rootView
     }
 
+
     companion object {
         lateinit var naverMap: NaverMap
         /**

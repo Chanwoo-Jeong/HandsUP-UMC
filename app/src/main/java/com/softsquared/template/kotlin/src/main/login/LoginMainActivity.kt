@@ -105,6 +105,4 @@ class LoginMainActivity : AppCompatActivity() {
 
         binding.LoginPageEditTextEmail.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null)
     }
-
-
 }
