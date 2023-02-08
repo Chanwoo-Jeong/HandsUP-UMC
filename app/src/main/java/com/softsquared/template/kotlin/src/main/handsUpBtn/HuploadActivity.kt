@@ -17,6 +17,10 @@ class HuploadActivity : AppCompatActivity() {
         viewbinding = HandsupbtnBinding.inflate(layoutInflater)
         setContentView(viewbinding.root)
 
+        viewbinding.cancelButton.setOnClickListener{
+            finish()
+        }
+
         viewbinding.seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 viewbinding.seekbarValue.setText(String.format("%d h", seekBar.getProgress()))
