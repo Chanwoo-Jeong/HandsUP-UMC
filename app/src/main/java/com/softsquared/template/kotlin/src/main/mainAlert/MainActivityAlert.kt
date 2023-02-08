@@ -63,12 +63,13 @@ class MainActivityAlert : AppCompatActivity() {
         ) { result ->
             if (result.resultCode == RESULT_OK) {
                 val name = result.data?.getStringExtra("name")
+                val location = result.data?.getStringExtra("location")
                 val postContent = result.data?.getStringExtra("postContent")
 
                 val database = Firebase.database
                 val myRef = database.getReference("postRoom")
 
-                var postRoom = MainData(name.toString(),"위치비밀",10,postContent.toString())
+                var postRoom = MainData(name.toString(),location.toString(),10,postContent.toString())
                 myRef.push().setValue(postRoom)
 
                 val intent = Intent(this, MainActivity::class.java)

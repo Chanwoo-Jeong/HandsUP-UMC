@@ -2,7 +2,9 @@ package com.softsquared.template.kotlin
 
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,7 @@ class HuploadActivity : AppCompatActivity() {
         viewbinding.cancelButton.setOnClickListener{
             finish()
         }
+
 
         viewbinding.seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
@@ -43,8 +46,16 @@ class HuploadActivity : AppCompatActivity() {
             }
         }
         viewbinding.uploadBtn.setOnClickListener {
+
+            var location = if(viewbinding.locationSwitch.isChecked){
+                viewbinding.locationText.getText().toString()
+            } else {
+                "위치비밀"
+            }
+
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("name",viewbinding.nickname.getText().toString())
+            intent.putExtra("location" , location)
             intent.putExtra("postContent",viewbinding.Content.getText().toString())
             setResult(RESULT_OK,intent)
             finish()

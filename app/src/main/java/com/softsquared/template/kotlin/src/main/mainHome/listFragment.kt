@@ -41,9 +41,10 @@ class listFragment : Fragment() {
             override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
                 var postRoom =  dataSnapshot.getValue(MainData::class.java)
                 var name = postRoom?.name
+                var location = postRoom?.location
                 var Content = postRoom?.content
 
-                dataList.add(MainData(name.toString(), "위치 비밀",10,Content.toString()))
+                dataList.add(MainData(name.toString(), location.toString(),10,Content.toString()))
                 rvAdapter.notifyDataSetChanged()
             }
             override fun onChildChanged(dataSnapshot: DataSnapshot, s: String?) {}
