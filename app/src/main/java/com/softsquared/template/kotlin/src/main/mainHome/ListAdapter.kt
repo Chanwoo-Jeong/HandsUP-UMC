@@ -49,7 +49,8 @@ class ListAdapter(private val list: ArrayList<MainData>,private val context: Con
 
             listBox.setOnClickListener {
                 val intent = Intent(context, ChatActivity::class.java)
-                intent.putExtra("postid",postid.toString())
+                intent.putExtra("postid",postid)
+                intent.putExtra("datacontent",data.content)
                 context.startActivity(intent);
             }
 

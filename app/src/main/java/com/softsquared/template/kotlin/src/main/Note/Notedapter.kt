@@ -52,6 +52,8 @@ class Notedapter(private val items: MutableList<NoteData>, private val context: 
                 val intent = Intent(context, ChatActivity::class.java)
                 intent.putExtra("postid",item.to)
                 intent.putExtra("from",item.from)
+                intent.putExtra("roomname", item.roomname)
+                intent.putExtra("datacontent",item.content)
                 context.startActivity(intent);
             }
         }

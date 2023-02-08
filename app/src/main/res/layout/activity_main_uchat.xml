@@ -3,12 +3,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingTop="20dp"
     android:paddingRight="10dp"
     android:paddingBottom="10dp"
     tools:context=".src.main.Chatting.ChatActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="15dp"
+        android:elevation="20dp"
+        android:background="@drawable/messageround">
+
+
+        <ImageView
+            android:id="@+id/messageImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/group_74" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            android:padding="0dp"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:textFontWeight="800"
+            android:textStyle="bold"
+            android:text="차라나"
+            app:layout_constraintStart_toEndOf="@+id/messageImage"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+
+        <EditText
+            android:id="@+id/messageContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="0dp"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:text="안녕하세요 글보고 연락드려요 수업끝.."
+            android:textColor="@color/black"
+            android:textFontWeight="600"
+            app:layout_constraintStart_toEndOf="@+id/messageImage"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
