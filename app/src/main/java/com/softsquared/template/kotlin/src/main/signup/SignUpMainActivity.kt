@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.res.ResourcesCompat
 import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.databinding.ActivitySignUpMainBinding
 
@@ -111,11 +112,17 @@ class SignUpMainActivity : AppCompatActivity(),SendEnableButtonSign {
 
     override fun sendSign(isEnable: Boolean) {
         if (isEnable){
+            val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+            val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+            binding.SignUpButtonNext.background=enableButtonBackground
             binding.SignUpButtonNext.isEnabled=true
-            binding.SignUpButtonNext.setBackgroundColor(Color.parseColor("#F47C16"))
+            //binding.SignUpButtonNext.setBackgroundColor(Color.parseColor("#F47C16"))
         }else{
+            val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+            val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+            binding.SignUpButtonNext.background=disableButtonBackground
             binding.SignUpButtonNext.isEnabled=false
-            binding.SignUpButtonNext.setBackgroundColor(Color.parseColor("#DBDBDB"))
+            //binding.SignUpButtonNext.setBackgroundColor(Color.parseColor("#DBDBDB"))
         }
     }
 }

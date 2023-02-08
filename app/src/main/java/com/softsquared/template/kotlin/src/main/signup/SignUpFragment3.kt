@@ -44,11 +44,17 @@ class SignUpFragment3: Fragment() {
         binding.SignUpEditTextEmail.doOnTextChanged { text, start, before, count ->
             userEmail=text.toString()
             if(userEmail!=""){
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.SignUpButtonGetCode.background=enableButtonBackground
                 binding.SignUpButtonGetCode.isEnabled=true
-                binding.SignUpButtonGetCode.setBackgroundColor(Color.parseColor("#F47C16"))
+                //binding.SignUpButtonGetCode.setBackgroundColor(Color.parseColor("#F47C16"))
             }else{
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.SignUpButtonGetCode.background=disableButtonBackground
                 binding.SignUpButtonGetCode.isEnabled=false
-                binding.SignUpButtonGetCode.setBackgroundColor(Color.parseColor("#DBDBDB"))
+                //binding.SignUpButtonGetCode.setBackgroundColor(Color.parseColor("#DBDBDB"))
             }
         }
 

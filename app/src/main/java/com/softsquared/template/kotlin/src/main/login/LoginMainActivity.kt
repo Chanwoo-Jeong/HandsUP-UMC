@@ -30,11 +30,17 @@ class LoginMainActivity : AppCompatActivity() {
             resetEditTextBackground()
             emailText=text.toString()
             if(checkEmailAndPasswordIsNull()){
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.LoginPageButtonLogin.background=disableButtonBackground
                 binding.LoginPageButtonLogin.isEnabled=false
-                binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#DBDBDB"))
+                //binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#DBDBDB"))
             }else{
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.LoginPageButtonLogin.background=enableButtonBackground
                 binding.LoginPageButtonLogin.isEnabled=true
-                binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#F47C16"))
+                //binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#F47C16"))
             }
         }
 
@@ -42,12 +48,17 @@ class LoginMainActivity : AppCompatActivity() {
             resetEditTextBackground()
             passwordText=text.toString()
             if(checkEmailAndPasswordIsNull()){
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.LoginPageButtonLogin.background=disableButtonBackground
                 binding.LoginPageButtonLogin.isEnabled=false
-                binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#DBDBDB"))
+                //binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#DBDBDB"))
             }else{
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.LoginPageButtonLogin.background=enableButtonBackground
                 binding.LoginPageButtonLogin.isEnabled=true
-
-                binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#F47C16"))
+                //binding.LoginPageButtonLogin.setBackgroundColor(Color.parseColor("#F47C16"))
             }
         }
 
@@ -87,6 +98,14 @@ class LoginMainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+        val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+        binding.LoginPageButtonLogin.background=disableButtonBackground
+    }
+
     fun checkEmailAndPasswordIsNull() :Boolean{
         return ((emailText == "")||(passwordText==""))
     }

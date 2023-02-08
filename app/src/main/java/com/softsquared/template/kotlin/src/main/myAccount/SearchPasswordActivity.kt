@@ -25,11 +25,17 @@ class SearchPasswordActivity : AppCompatActivity() {
             email=text.toString()
 
             if(checkEmailIsNull()){
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.SearchPasswordPageButtonSendPassword.background=disableButtonBackground
                 binding.SearchPasswordPageButtonSendPassword.isEnabled=false
-                binding.SearchPasswordPageButtonSendPassword.setBackgroundColor(Color.parseColor("#DBDBDB"))
+                //binding.SearchPasswordPageButtonSendPassword.setBackgroundColor(Color.parseColor("#DBDBDB"))
             }else{
+                val enableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.enable_button_background, null)
+                val disableButtonBackground= ResourcesCompat.getDrawable(resources, R.drawable.disable_button_background, null)
+                binding.SearchPasswordPageButtonSendPassword.background=enableButtonBackground
                 binding.SearchPasswordPageButtonSendPassword.isEnabled=true
-                binding.SearchPasswordPageButtonSendPassword.setBackgroundColor(Color.parseColor("#F47C16"))
+                //binding.SearchPasswordPageButtonSendPassword.setBackgroundColor(Color.parseColor("#F47C16"))
             }
         }
 

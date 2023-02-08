@@ -61,7 +61,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="26dp"
                 android:enabled="false"
-                android:background="@color/grey_300"
+                android:background="@drawable/disable_button_background"
                 android:fontFamily="@font/roboto_bold"
                 android:text="인증번호받기"
                 android:textColor="@color/white"
@@ -168,7 +168,8 @@
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
                 app:hintEnabled="false"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/SignUp_TextInputEditText_Check_Password"
                     android:layout_width="match_parent"

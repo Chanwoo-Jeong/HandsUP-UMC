@@ -48,7 +48,7 @@
         android:id="@+id/SignUp_button_Next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey_300"
+        android:background="@drawable/disable_button_background"
         android:fontFamily="@font/roboto_bold"
         android:text="다음"
         android:enabled="false"
