@@ -28,11 +28,12 @@ fun WhatTime(): String? {
 class ChatActivity : AppCompatActivity() {
     private lateinit var viewbinding: ActivityMainUchatBinding
 
-    var myid = "userthree"
+    var myid = "usertwo"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val intent = intent
+        val postowner = intent.getStringExtra("postowner")
         val postid = intent.getStringExtra("postid")
         val datacontent = intent.getStringExtra("datacontent")
         val roomname = intent.getStringExtra("roomname")
@@ -47,6 +48,8 @@ class ChatActivity : AppCompatActivity() {
 
         if (roomname != null) {
             if(roomname.isNotEmpty()){
+
+                viewbinding.name.setText(postowner)
                 Log.d("from",roomname)
                 val database = Firebase.database
                 val myRef = database.getReference("message").child(roomname)
@@ -87,7 +90,7 @@ class ChatActivity : AppCompatActivity() {
                         myRef.push().setValue(chatnew)
 //                        rvAdapter.notifyDataSetChanged()
 
-                        var note = NoteData(roomname,datacontent.toString(),postid.toString(),from.toString())
+                        var note = NoteData(postowner.toString(),roomname,datacontent.toString(),postid.toString(),from.toString())
                         NmyRef.push().setValue(note)
 //                        Notedapter.notifyDataSetChanged()
                         //스크롤 포지션
@@ -122,7 +125,7 @@ class ChatActivity : AppCompatActivity() {
                 myRef.push().setValue(chatnew)
 
 
-                var note = NoteData(postid.toString() + myid,datacontent.toString(),myid, postid.toString())
+                var note = NoteData(postid.toString(),postid.toString() + myid,datacontent.toString(),myid, postid.toString())
                 NmyRef.push().setValue(note)
 
                 //스크롤 포지션

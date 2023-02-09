@@ -8,16 +8,144 @@
     android:orientation="vertical"
     tools:context=".src.main.mainHome.DetailActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_gravity="center"
-        android:id="@+id/recyclerview"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_gravity="center"-->
+<!--        android:id="@+id/recyclerview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="520dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:clipToPadding="false"-->
+<!--        android:paddingStart="10dp"-->
+<!--        android:paddingEnd="10dp"-->
+<!--        tools:listitem="@layout/activity_detail_item"/>-->
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
-        android:layout_height="560dp"
-        android:orientation="horizontal"
-        android:clipToPadding="false"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
-        tools:listitem="@layout/activity_detail_item"/>
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:background="@drawable/card_tag_background"
+            android:elevation="1dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="5dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="5dp"
+            android:text="#스터디"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/card_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:elevation="1dp"
+            android:id="@+id/card_menu"
+            android:src="@drawable/more_horiz"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/card_container" />
+
+        <LinearLayout
+            android:id="@+id/card_container"
+            android:layout_width="294dp"
+            android:layout_height="490dp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/item_card_background"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="23dp"
+                android:layout_marginBottom="32dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:textAlignment="center"
+                    android:text="차라나"
+                    android:textColor="#111"
+                    android:textFontWeight="600"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textAlignment="center">
+
+                    <TextView
+                        android:id="@+id/feature_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:textAlignment="center"
+                        android:text="차라나"
+                        android:textFontWeight="500"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/feature_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:textAlignment="center"
+                        android:text="위치비밀"
+                        android:textFontWeight="500"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/feature_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="10분전"
+                        android:textFontWeight="500"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/profile_img"
+                    android:layout_gravity="center"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/group_72" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:text="제가 3시쯤에 수업이 끝날거 같은데 혹시 만나실 분 계신가요? 😊"
+                android:layout_gravity="center"
+                android:textColor="#202020"
+                android:textFontWeight="500"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

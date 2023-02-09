@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainHomeBinding
     private lateinit var getResultText: ActivityResultLauncher<Intent>
-    var id: String = "userthree"
+    var id: String = "usertwo"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity() {
         val plusBtn = findViewById<FloatingActionButton>(R.id.floatingActionButton2)
         val homeBtn = findViewById<ImageView>(R.id.toolbar_home_btn)
         val alertBtn = findViewById<ImageView>(R.id.toolbar_alert_btn)
+        val handsupLogo = findViewById<ImageView>(R.id.handsupLogo)
+
+        handsupLogo.setOnClickListener{
+            val intent = Intent(this, DetailActivity::class.java)
+            startActivity(intent)
+        }
 
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frameLayout, mapFragment()).commit()
@@ -78,6 +84,8 @@ class MainActivity : AppCompatActivity() {
                 val name = result.data?.getStringExtra("name")
                 val location = result.data?.getStringExtra("location")
                 val postContent = result.data?.getStringExtra("postContent")
+                val tag = result.data?.getStringExtra("tag")
+                val duration = result.data?.getStringExtra("duration")
 
                 val database = Firebase.database
                 val myRef = database.getReference("postRoom")

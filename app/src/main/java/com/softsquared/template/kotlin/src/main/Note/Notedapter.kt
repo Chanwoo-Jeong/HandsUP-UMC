@@ -50,6 +50,7 @@ class Notedapter(private val items: MutableList<NoteData>, private val context: 
 
             notebox.setOnClickListener {
                 val intent = Intent(context, ChatActivity::class.java)
+                intent.putExtra("postowner",item.postowner)
                 intent.putExtra("postid",item.to)
                 intent.putExtra("from",item.from)
                 intent.putExtra("roomname", item.roomname)

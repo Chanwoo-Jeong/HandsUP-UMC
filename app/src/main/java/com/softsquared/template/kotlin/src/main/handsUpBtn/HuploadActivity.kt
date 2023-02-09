@@ -24,6 +24,7 @@ class HuploadActivity : AppCompatActivity()  {
         viewbinding = HandsupbtnBinding.inflate(layoutInflater)
         setContentView(viewbinding.root)
 
+
         viewbinding.cancelButton.setOnClickListener{
             finish()
         }
@@ -44,7 +45,6 @@ class HuploadActivity : AppCompatActivity()  {
             }
         })
 
-
         val btn1 = viewbinding.toggleButton
         val btn2 = viewbinding.toggleButton2
         val btn3 = viewbinding.toggleButton3
@@ -59,11 +59,8 @@ class HuploadActivity : AppCompatActivity()  {
                 for(btn in btnarr) {
                     btn.setTextColor(Color.parseColor("#000000"))
                 }
-                if (btn.isChecked) {
                     btn.setTextColor(Color.parseColor("#d9534f"))
-                } else {
-                    btn.setTextColor(Color.parseColor("#000000"))
-                }
+
             }
         }
 
@@ -87,25 +84,7 @@ class HuploadActivity : AppCompatActivity()  {
             intent.putExtra("duration",duration)
             setResult(RESULT_OK,intent)
             finish()
-            //액티비티를 끝내는 코드
         }
 
     }
-
-//
-//    private fun setTextColorChange(btn: ToggleButton) {
-//        if (btn != null) {
-//            if (btn.isChecked) {
-//                btn.setTextColor(Color.parseColor("#215449"))
-//                return btn.getText().toString()
-//            } else {
-//                btn.setTextColor(Color.parseColor("#000000"))
-//                return ""
-//            }
-//
-//        }
-//        return ""
-//    }
-
-
 }

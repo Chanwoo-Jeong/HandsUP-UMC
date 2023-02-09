@@ -47,13 +47,23 @@ class ListAdapter(private val list: ArrayList<MainData>,private val context: Con
             time.text = data.time.toString() + "분전"
             content.text = data.content
 
-            listBox.setOnClickListener {
-                val intent = Intent(context, ChatActivity::class.java)
-                intent.putExtra("postid",postid)
+            //바로 채팅 로직
+//            listBox.setOnClickListener {
+//                val intent = Intent(context, ChatActivity::class.java)
+//                intent.putExtra("postid",postid)
+//                intent.putExtra("datacontent",data.content)
+//                context.startActivity(intent);
+//            }
+
+            //디테일 로직으로 가기
+            listBox.setOnClickListener{
+                val intent = Intent(context, DetailActivity::class.java)
+                intent.putExtra("postid",data.name)
+                intent.putExtra("location",data.location)
+                intent.putExtra("time",data.time.toString() + "분전")
                 intent.putExtra("datacontent",data.content)
                 context.startActivity(intent);
             }
-
         }
     }
 }

@@ -19,7 +19,7 @@ import com.softsquared.template.kotlin.databinding.FragmentSecondBinding
 class SecondFragment : Fragment() {
 
         private lateinit var viewBinding: FragmentSecondBinding
-        var id : String = "userthree"
+        var id : String = "usertwo"
         override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -42,6 +42,7 @@ class SecondFragment : Fragment() {
                 myRef.addChildEventListener(object : ChildEventListener {
                     override fun onChildAdded(dataSnapshot: DataSnapshot, s: String?) {
                         var Note =  dataSnapshot.getValue(NoteData::class.java)
+                        var postowner = Note?.postowner
                         var roomname = Note?.roomname
                         var content = Note?.content
                         var from = Note?.from
@@ -49,7 +50,7 @@ class SecondFragment : Fragment() {
 
                         if(from != id && to == id) {
                             noteitems.apply {
-                                add(NoteData(roomname.toString(),content.toString(),from.toString(), to.toString()))
+                                add(NoteData(postowner.toString(),roomname.toString(),content.toString(),from.toString(), to.toString()))
                             }
                             rvAdapter.notifyDataSetChanged()
                         }
