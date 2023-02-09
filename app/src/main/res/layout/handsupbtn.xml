@@ -165,9 +165,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ToggleButton"
+                    android:textColor="@color/redForText"
                     android:background="@null"
-                    android:textOff="#밥"
-                    android:textOn="#밥" />
+                    android:checked="true"
+                    android:textOff="#전체"
+                    android:textOn="#전체" />
                 <ToggleButton
                     android:id="@+id/toggleButton2"
                     android:layout_width="wrap_content"
@@ -234,7 +236,7 @@
             android:layout_width="49dp"
             android:layout_height="19dp"
             android:textAlignment="center"
-            android:text="1 h"
+            android:text="12 h"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:background="@drawable/msgruntime"
@@ -243,12 +245,13 @@
             app:layout_constraintBottom_toBottomOf="@id/seekBar"
             app:layout_constraintTop_toTopOf="@id/messageRuntimeTitle" />
 
+
         <SeekBar
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="10"
-            android:progress="1"
+            android:max="12"
+            android:progress="12"
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="29dp"
