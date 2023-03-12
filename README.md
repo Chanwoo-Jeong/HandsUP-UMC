@@ -29,6 +29,7 @@ javascript는 동적언어이지만 kotlin은 정적언어이다. 이는 타입�
 - Socket.io 와 Firebase realtime Database 를 통해 실시간 채팅을 구현했다.<br/>
   앱이 익숙치 않아 웹 (Node.js , Express) 에서 먼저 구현해보았다. <br/>
   어렵다면 내가 익숙한 환경에서 적응하는 것도 좋은 방법이라고 생각해서이다!
+  - https://github.com/Chanwoo-Jeong/Web-Chatting-with-Socket.io
   <img width="1259" alt="socketio" src="https://user-images.githubusercontent.com/91375979/224561012-a78e0013-3672-483c-81ac-5697fcc4d0e8.png">
 
 
