@@ -2,7 +2,7 @@
 UMC 동아리 안드로이드 개발자로 참여하여 최종프로젝트 진행!
 
 ## 웹개발자가 왜 앱 포폴을 넣었을까?
-비록 앱이지만 Soket.io , Firebase 는 웹에서도 유용하여 웹개발자로서 의미없는 경험이라고 보기는 어렵다!
+비록 앱이지만 Soket.io , Firebase 는 웹에서도 유용하여 웹개발자로서 의미없는 경험이라고 보기는 어렵다! <br/>
 javascript는 동적언어이지만 kotlin은 정적언어이다. 이는 타입스크립트를 배울때 큰 도움이 되었다!
 
 
@@ -25,8 +25,8 @@ javascript는 동적언어이지만 kotlin은 정적언어이다. 이는 타입�
 
 ### `성장한점`
 - 팀장으로서 모든 트러블 슈팅을 함께했다. 특히 merge할때 오류를 주도적으로 해결했다!
-- Socket.io 와 Firebase realtime Database 를 통해 실시간 채팅을 구현했다.
-  앱이 익숙치 않아 웹에서 먼저 구현해보았다. 
+- Socket.io 와 Firebase realtime Database 를 통해 실시간 채팅을 구현했다.<br/>
+  앱이 익숙치 않아 웹에서 먼저 구현해보았다. <br/>
   어렵다면 내가 익숙한 환경에서 적응하는 것도 좋은 방법이라고 생각해서이다!
   <img width="1259" alt="socketio" src="https://user-images.githubusercontent.com/91375979/224561012-a78e0013-3672-483c-81ac-5697fcc4d0e8.png">
 
