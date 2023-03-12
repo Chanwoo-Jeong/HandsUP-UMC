@@ -19,6 +19,7 @@ javascript는 동적언어이지만 kotlin은 정적언어이다. 이는 타입�
 ### `사용기술`
 - Kotlin , Android Studio
 - Socket.io , Firebase realtime Database
+- Node.js , Express
 
 ### `주요역할`
 - 실시간 채팅 구현 및 전체 프로젝트 관리(팀장)
@@ -26,7 +27,7 @@ javascript는 동적언어이지만 kotlin은 정적언어이다. 이는 타입�
 ### `성장한점`
 - 팀장으로서 모든 트러블 슈팅을 함께했다. 특히 merge할때 오류를 주도적으로 해결했다!
 - Socket.io 와 Firebase realtime Database 를 통해 실시간 채팅을 구현했다.<br/>
-  앱이 익숙치 않아 웹에서 먼저 구현해보았다. <br/>
+  앱이 익숙치 않아 웹 (Node.js , Express) 에서 먼저 구현해보았다. <br/>
   어렵다면 내가 익숙한 환경에서 적응하는 것도 좋은 방법이라고 생각해서이다!
   <img width="1259" alt="socketio" src="https://user-images.githubusercontent.com/91375979/224561012-a78e0013-3672-483c-81ac-5697fcc4d0e8.png">
 
