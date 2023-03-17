@@ -1,5 +1,6 @@
 # UMC - HandsUp final Project 
 UMC 동아리 안드로이드 개발자로 참여하여 최종프로젝트 진행!
+<img width="674" alt="KakaoTalk_20230315_185747809" src="https://user-images.githubusercontent.com/91375979/225915890-263637d9-e076-4392-b0e8-b9a60f559ba5.png">
 
 ## 웹개발자가 왜 앱 포폴을 넣었을까?
 비록 앱이지만 WebSoket.io , Firebase 는 웹에서도 유용하여 웹개발자로서 의미없는 경험이라고 보기는 어렵다! <br/>
